@@ -45,7 +45,7 @@
 public class StringToInteger {
     public int myAtoi(String str) {
         String s = str.trim();
-        if (s.length() < 1) {
+        if (s.isEmpty()) {
             return 0;
         }
         boolean neg = false;
