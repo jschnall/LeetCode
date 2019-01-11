@@ -11,14 +11,25 @@
  * return [0, 1].
  */
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int num = nums[i];
+            int other = target - num;
+            if (map.containsKey(other)) {
+                int[] result = { map.get(other), i };
+                return result;
+            }
+            map.put(num, i);
+        }
+        return null;
+    }
+
+    public int[] twoSumOffline(int[] nums, int target) {
         // map nums to how many times they occur
         Map<Integer, List<Integer>> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
