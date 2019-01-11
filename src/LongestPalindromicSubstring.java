@@ -16,7 +16,7 @@
 public class LongestPalindromicSubstring {
     // Dynamic programming solution:
     // Keep a table of whether substrings are palindromes
-    
+
     public String longestPalindrome(String s) {
         if (s == null || s.length() < 1) {
             return "";
